@@ -22,6 +22,8 @@ import mlflow
 from urllib.parse import urlparse
 
 import dagshub
+dagshub.init(repo_owner='sheryyll', repo_name='phish-ops', mlflow=True)
+
 
 
 class ModelTrainer:
