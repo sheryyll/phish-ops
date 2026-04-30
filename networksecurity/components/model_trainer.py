@@ -22,8 +22,10 @@ import mlflow
 from urllib.parse import urlparse
 
 import dagshub
-dagshub.init(repo_owner='sheryyll', repo_name='phish-ops', mlflow=True, token=os.environ.get('DAGSHUB_TOKEN'))
-
+os.environ["MLFLOW_TRACKING_USERNAME"] = os.environ.get("DAGSHUB_TOKEN")
+os.environ["MLFLOW_TRACKING_PASSWORD"] = os.environ.get("DAGSHUB_TOKEN")
+os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/sheryyll/phish-ops.mlflow"
+dagshub.init(repo_owner='sheryyll', repo_name='phish-ops', mlflow=True)
 
 
 class ModelTrainer:
