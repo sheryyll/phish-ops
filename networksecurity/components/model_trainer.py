@@ -21,11 +21,9 @@ from sklearn.ensemble import (
 import mlflow
 from urllib.parse import urlparse
 
-import dagshub
-os.environ["MLFLOW_TRACKING_USERNAME"] = os.environ.get("DAGSHUB_TOKEN")
-os.environ["MLFLOW_TRACKING_PASSWORD"] = os.environ.get("DAGSHUB_TOKEN")
-os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/sheryyll/phish-ops.mlflow"
-dagshub.init(repo_owner='sheryyll', repo_name='phish-ops', mlflow=True)
+os.environ["MLFLOW_TRACKING_USERNAME"] = "sheryyll"
+os.environ["MLFLOW_TRACKING_PASSWORD"] = os.environ.get("DAGSHUB_TOKEN", "")
+mlflow.set_tracking_uri("https://dagshub.com/sheryyll/phish-ops.mlflow")
 
 
 class ModelTrainer:
