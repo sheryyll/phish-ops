@@ -28,7 +28,7 @@ Phish Ops is an end-to-end Machine Learning Operations (MLOps) project designed 
 ### Steps
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/sheryyll/phish-ops.git
    cd phish-ops
    ```
 
